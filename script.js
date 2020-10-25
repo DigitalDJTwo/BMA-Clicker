@@ -1,6 +1,8 @@
+//version number
 const version = 0.1;
 
-if(localStorage.getItem('version') != version && version < 1){
+//will reset the game when the version is changed if previous version is less than 1.0 (beta)
+if(localStorage.getItem('version') != version && localStorage.getItem('version') < 1){
   localStorage.clear();
   localStorage.setItem('version', version);
   location.reload();
