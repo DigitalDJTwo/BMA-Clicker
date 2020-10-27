@@ -1,7 +1,7 @@
 //version number
 const version = 0.1;
 
-//will reset the game when the version is changed if previous version is less than 1.0 (beta)
+//will reset the game when the version is changed if previous version is less than 1.0
 if(localStorage.getItem('version') != version && localStorage.getItem('version') < 1){
   localStorage.clear();
   localStorage.setItem('version', version);
@@ -26,7 +26,7 @@ var factoryCost = 100;
 var factoryUpgradeCost = 500;
 var factoryProduction = 1;
 var mobileProcessors = 0;
-var convertFactoryCost = 500;
+var convertFactoryCost = 800;
 //phase 5 variables
 var constructionRobots = 1;
 var worldControl = 0;
@@ -431,7 +431,7 @@ function upgradeFactories(){
 function convertFactory(){
   if(robotFactories >= 1 && robotParts >= convertFactoryCost){
     robotParts = (robotParts - convertFactoryCost);
-    convertFactoryCost = Math.round((convertFactoryCost * 1.05));
+    convertFactoryCost = Math.round((convertFactoryCost * 1.03));
     robotFactories = (robotFactories - 1);
     mobileProcessors = (+mobileProcessors + +1);
     localStorage.setItem('robotFactories', robotFactories);

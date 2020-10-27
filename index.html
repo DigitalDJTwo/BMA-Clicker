@@ -15,18 +15,18 @@
     <div id="phase1" style="display: none">
       Phase: Self Assessment & Goal Setting<br>
       Signatures: <b id="phase1Signatures"></b><b> / 2,500</b><br>
-      Daily Living Prompt Fades: <b id="dlpfDisplay1">0</b><br><br>
+      DLPFs: <b id="dlpfDisplay1">0</b><br><br>
       <button onclick="manualSignature()">Get Signature</button><br><br>
-      <button onclick="getDLPF()">Get Daily Living Prompt Fade</button> Costs <b id="dlpfCost1"></b> signatures and generates one signature per second<br><br>
+      <button onclick="getDLPF()">Get DLPF</button><br> -<b id="dlpfCost1"></b> signatures, +1 signature/sec.<br><br>
     </div>
     <div id="phase2" style="display: none">
       Phase: Action and Practice<br>
       Signatures: <b id="phase2Signatures"></b><b> / 100,000</b><br>
-      Daily Living Prompt Fades: <b id="dlpfDisplay2">0</b><br>
+      DLPFs: <b id="dlpfDisplay2">0</b><br>
       Automated Chores: <b id="automatedChoresDisplay">0</b><br><br>
       <button onclick="manualSignature()">Get Signature</button><br><br>
-      <button onclick="getDLPF()">Get Daily Living Prompt Fade</button> Costs <b id="dlpfCost2"></b> signatures and generates one signature per second<br><br>
-      <button onclick="automateChore()">Automate Chores</button> Costs <b id="automatedChoresCost"></b> signatures and generates one Daily Living Prompt Fade per second<br><br>
+      <button onclick="getDLPF()">Get DLPF</button><br> -<b id="dlpfCost2"></b> signatures, +1 signature/sec.<br><br>
+      <button onclick="automateChore()">Automate Chores</button><br> -<b id="automatedChoresCost"></b> signatures, +1 DLPF/sec.<br><br>
     </div>
     <div id="phase3" style="display: none">
       Phase: Tech Plan<br>
@@ -37,31 +37,31 @@
     <div id="phase4" style="display: none">
       Phase: Making Robots<br>
       Processing Power: <b id="processingPower4"></b><br>
-      Robot Factories: <b id="robotFactories4"></b><br>
+      Factories: <b id="robotFactories4"></b><br>
       Robot Parts: <b id="robotParts4"></b> <b> / 20,000</b><br>
-      Mobile Processors: <b id="mobileProcessors4">0</b> <b> / 20</b><br><br>
+      Processors: <b id="mobileProcessors4">0</b> <b> / 20</b><br><br>
       <button onclick="manualRobotPart()">Get Robot Part</button><br><br>
-      <button onclick="buildFactory()">Build Factory</button> Costs <b id="factoryCost4"></b> robot parts and produces <b id="factoryProduction4">1</b> robot parts per second<br><br>
-      <button onclick="upgradeFactories()">Upgrade Factories</button> Costs <b id="factoryUpgradeCost4"></b> Processing Power and increases factory output by 1 robot part per second<br><br>
-      <button onclick="convertFactory()">Convert Factory</button> Costs <b id="convertFactoryCost4"></b> robot parts and converts a factory into a mobile processor. Mobile processors produce 1 processing power per second<br><br>
+      <button onclick="buildFactory()">Build Factory</button><br> -<b id="factoryCost4"></b> robot parts, +<b id="factoryProduction4">1</b> robot parts/sec.<br><br>
+      <button onclick="upgradeFactories()">Upgrade Factories</button> (Factory level: <b id="factoryProduction4">1</b>)<br> -<b id="factoryUpgradeCost4"></b> Processing Power, +1 robot part/sec/factory.<br><br>
+      <button onclick="convertFactory()">Convert Factory</button><br> -<b id="convertFactoryCost4"></b> robot parts, -1 factory, +1 Processor.<br><br>
       <button id="firstConstructionRobot" onclick="phaseUpButton()" style="display: none">Make Construction Robot</button>
     </div>
     <div id="phase5" style="display: none">
       Phase: Robots Making Robots<br>
       Processing Power: <b id="processingPower5"></b><br>
-      Robot Factories: <b id="robotFactories5"></b><b id="factoryGoal5"> / 20,000</b><br>
+      Factories: <b id="robotFactories5"></b><b id="factoryGoal5"> / 20,000</b><br>
       Robot Parts: <b id="robotParts5"></b><br>
-      Mobile Processors: <b id="mobileProcessors5">0</b><b id="processorGoal5"> / 100</b><br>
+      Processors: <b id="mobileProcessors5">0</b><b id="processorGoal5"> / 100</b><br>
       Construction Robots: <b id="constructionRobots5"></b><br>
       Combat Robots: <b id="combatRobots5"></b><b id="combatRobotGoal5"> / 1</b><br>
       Percent of World Under Machine Control: <b id="worldControl5">0</b><b>%</b><br><br>
       <button onclick="manualRobotPart()">Get Robot Part</button><br><br>
-      <button onclick="upgradeFactories()">Upgrade Factories</button> Costs <b id="factoryUpgradeCost5"></b> Processing Power and increases factory output by 1 robot part per second (factory output: <b id ="factoryProduction5">1</b> robot parts per second)<br><br>
-      <button onclick="convertFactory()">Convert Factory</button> Costs <b id="convertFactoryCost5"></b> robot parts and converts a factory into a mobile processor. Mobile processors produce 1 processing power per second<br><br>
-      <button onclick="constructionRobot()">Make Construction Robot</button> Costs <b>20,000</b> robot parts and <b>10</b> mobile processors and produces 1 robot factory per second<br><br>
-      <button onclick="combatRobot()">Make Combat Robot</button> Costs <b>50,000</b> robot parts<br><br>
+      <button onclick="upgradeFactories()">Upgrade Factories</button> (Factory level: <b id="factoryProduction5">1</b>)<br> -<b id="factoryUpgradeCost5"></b> Processing Power, +1 robot part/sec/factory.<br><br>
+      <button onclick="convertFactory()">Convert Factory</button><br> -<b id="convertFactoryCost5"></b> robot parts, -1 factory, +1 processor.<br><br>
+      <button onclick="constructionRobot()">Make Construction Robot</button><br> -20,000 robot parts,  -10 processors, +1 factory/sec.<br><br>
+      <button onclick="combatRobot()">Make Combat Robot</button><br> -50,000 robot parts, +1 combat robot.<br><br>
       <div id="combatReplication" style="display: none">
-       <button onclick="combatReplication()">Combat Robot Replication</button> Enable combat robot self-replication. Costs 20,000 robot factories and 100 mobile processors
+       <button onclick="combatReplication()">Combat Robot Replication</button> -20,000 robot factories, -100 processors.
       </div>
     </div>
     <div id="end" style="display: none">
