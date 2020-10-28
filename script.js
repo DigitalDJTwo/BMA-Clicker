@@ -392,7 +392,7 @@ function factoryProcess(){
       }
     } else if(combatReplicationBool == 1){
       if(combatRobots > 50){
-        combatRobots = Math.round((combatRobots * 1.01))
+        combatRobots = Math.round((combatRobots * 1.02))
       } else if(combatRobots <= 50){
         combatRobots = (+combatRobots + +1);
       }
