@@ -1,5 +1,5 @@
 //version number
-const version = 0.1;
+const version = 0.2;
 
 //will reset the game when the version is changed if previous version is less than 1.0
 if(localStorage.getItem('version') != version && localStorage.getItem('version') < 1){
