@@ -387,7 +387,7 @@ function factoryProcess(){
     document.getElementById("worldControl5").innerHTML = worldControl
     localStorage.setItem('worldControl', worldControl);
     if(combatReplicationBool == 0 && combatRobots >= 1){
-      if(robotFactories >= 20000 && mobileProcessors >= 100){
+      if(robotFactories >= 10000 && mobileProcessors >= 100){
         document.getElementById("combatReplication").style.display = "inline";
       }
     } else if(combatReplicationBool == 1){
@@ -480,8 +480,8 @@ function combatRobot(){
 }
 
 function combatReplication(){
-  if(robotFactories >= 20000 && mobileProcessors >= 100){
-    robotFactories = (robotFactories - 20000);
+  if(robotFactories >= 10000 && mobileProcessors >= 100){
+    robotFactories = (robotFactories - 10000);
     mobileProcessors = (mobileProcessors - 100);
     combatReplicationBool = 1;
     localStorage.setItem('robotParts', robotParts);
